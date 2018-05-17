@@ -284,30 +284,30 @@
 Aluno: Nélio Cezar Muniz Sampaio Matrícula: 2015042150
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{c+c1}{\PYZsh{} Importando bibliotecas}
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{c+c1}{\PYZsh{} Importando bibliotecas}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}28}]:} \PY{c+c1}{\PYZsh{} Importando dados}
-         \PY{n}{dataset} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data\PYZus{}tp1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} Importando dados}
+        \PY{n}{dataset} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data\PYZus{}tp1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}29}]:} \PY{c+c1}{\PYZsh{}Separando em (x, y)}
-         \PY{n}{x} \PY{o}{=} \PY{n}{dataset}\PY{o}{.}\PY{n}{iloc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{785}\PY{p}{]}\PY{o}{.}\PY{n}{values}
-         \PY{n}{y} \PY{o}{=} \PY{n}{dataset}\PY{o}{.}\PY{n}{iloc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
-         \PY{c+c1}{\PYZsh{}print( x[0] )}
-         \PY{c+c1}{\PYZsh{}print(y)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{}Separando em (x, y)}
+        \PY{n}{x} \PY{o}{=} \PY{n}{dataset}\PY{o}{.}\PY{n}{iloc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{785}\PY{p}{]}\PY{o}{.}\PY{n}{values}
+        \PY{n}{y} \PY{o}{=} \PY{n}{dataset}\PY{o}{.}\PY{n}{iloc}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
+        \PY{c+c1}{\PYZsh{}print( x[0] )}
+        \PY{c+c1}{\PYZsh{}print(y)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}30}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{y type: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{type}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{y type: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n+nb}{type}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -317,289 +317,289 @@ y type:  <class 'pandas.core.series.Series'>
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}31}]:} \PY{c+c1}{\PYZsh{} Transformando saída em vetor.}
-         \PY{n}{y2} \PY{o}{=} \PY{n}{y}
-         \PY{n}{conv\PYZus{}arr} \PY{o}{=} \PY{n}{y2}\PY{o}{.}\PY{n}{values}
-         
-         \PY{c+c1}{\PYZsh{}print(y)}
-         \PY{c+c1}{\PYZsh{}print(conv\PYZus{}arr)}
-         
-         \PY{n}{d} \PY{o}{=} \PY{p}{[} \PY{p}{[}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{conv\PYZus{}arr}\PY{p}{)}\PY{p}{)}\PY{p}{]}
-         \PY{k}{for} \PY{n}{ind}\PY{p}{,} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{conv\PYZus{}arr}\PY{p}{)}\PY{p}{:}
-             \PY{c+c1}{\PYZsh{}print(\PYZdq{}i:\PYZdq{}, i)}
-             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
-                 \PY{c+c1}{\PYZsh{}print(\PYZdq{}j:\PYZdq{}, j)}
-                 \PY{k}{if} \PY{n}{i}\PY{o}{==}\PY{n}{j}\PY{p}{:}
-                     \PY{n}{d}\PY{p}{[}\PY{n}{ind}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{k}{else}\PY{p}{:}
-                     \PY{n}{d}\PY{p}{[}\PY{n}{ind}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
-         
-         \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{data}\PY{o}{=}\PY{n}{d}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{}df}
-                     
-         \PY{c+c1}{\PYZsh{}for ind, i in enumerate(d):}
-         \PY{c+c1}{\PYZsh{}    print(conv\PYZus{}arr[ind])}
-         \PY{c+c1}{\PYZsh{}    print(i)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{c+c1}{\PYZsh{} Transformando saída em vetor.}
+        \PY{n}{y2} \PY{o}{=} \PY{n}{y}
+        \PY{n}{conv\PYZus{}arr} \PY{o}{=} \PY{n}{y2}\PY{o}{.}\PY{n}{values}
+        
+        \PY{c+c1}{\PYZsh{}print(y)}
+        \PY{c+c1}{\PYZsh{}print(conv\PYZus{}arr)}
+        
+        \PY{n}{d} \PY{o}{=} \PY{p}{[} \PY{p}{[}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{conv\PYZus{}arr}\PY{p}{)}\PY{p}{)}\PY{p}{]}
+        \PY{k}{for} \PY{n}{ind}\PY{p}{,} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{conv\PYZus{}arr}\PY{p}{)}\PY{p}{:}
+            \PY{c+c1}{\PYZsh{}print(\PYZdq{}i:\PYZdq{}, i)}
+            \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+                \PY{c+c1}{\PYZsh{}print(\PYZdq{}j:\PYZdq{}, j)}
+                \PY{k}{if} \PY{n}{i}\PY{o}{==}\PY{n}{j}\PY{p}{:}
+                    \PY{n}{d}\PY{p}{[}\PY{n}{ind}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+                \PY{k}{else}\PY{p}{:}
+                    \PY{n}{d}\PY{p}{[}\PY{n}{ind}\PY{p}{]}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+        
+        \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{data}\PY{o}{=}\PY{n}{d}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{}df}
+                    
+        \PY{c+c1}{\PYZsh{}for ind, i in enumerate(d):}
+        \PY{c+c1}{\PYZsh{}    print(conv\PYZus{}arr[ind])}
+        \PY{c+c1}{\PYZsh{}    print(i)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}40}]:} \PY{c+c1}{\PYZsh{}Separando em conjunto de treino e conjunto de teste}
-         \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k}{import} \PY{n}{train\PYZus{}test\PYZus{}split}
-         \PY{n}{x\PYZus{}train}\PY{p}{,} \PY{n}{x\PYZus{}test}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}test} \PY{o}{=} \PY{n}{train\PYZus{}test\PYZus{}split}\PY{p}{(} \PY{n}{x}\PY{p}{,} \PY{n}{df}\PY{p}{,} \PY{n}{test\PYZus{}size} \PY{o}{=} \PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{random\PYZus{}state} \PY{o}{=} \PY{l+m+mi}{0} \PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{}print(x\PYZus{}train)}
-         \PY{c+c1}{\PYZsh{}print(y\PYZus{}train)}
-         \PY{c+c1}{\PYZsh{}print(x\PYZus{}test)}
-         \PY{c+c1}{\PYZsh{}print(y\PYZus{}test)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{c+c1}{\PYZsh{}Separando em conjunto de treino e conjunto de teste}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k}{import} \PY{n}{train\PYZus{}test\PYZus{}split}
+        \PY{n}{x\PYZus{}train}\PY{p}{,} \PY{n}{x\PYZus{}test}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}test} \PY{o}{=} \PY{n}{train\PYZus{}test\PYZus{}split}\PY{p}{(} \PY{n}{x}\PY{p}{,} \PY{n}{df}\PY{p}{,} \PY{n}{test\PYZus{}size} \PY{o}{=} \PY{l+m+mf}{0.2}\PY{p}{,} \PY{n}{random\PYZus{}state} \PY{o}{=} \PY{l+m+mi}{0} \PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{}print(x\PYZus{}train)}
+        \PY{c+c1}{\PYZsh{}print(y\PYZus{}train)}
+        \PY{c+c1}{\PYZsh{}print(x\PYZus{}test)}
+        \PY{c+c1}{\PYZsh{}print(y\PYZus{}test)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}41}]:} \PY{k+kn}{import} \PY{n+nn}{keras}
-         \PY{k+kn}{from} \PY{n+nn}{keras}\PY{n+nn}{.}\PY{n+nn}{models} \PY{k}{import} \PY{n}{Sequential}
-         \PY{k+kn}{from} \PY{n+nn}{keras}\PY{n+nn}{.}\PY{n+nn}{layers} \PY{k}{import} \PY{n}{Dense}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{k+kn}{import} \PY{n+nn}{keras}
+        \PY{k+kn}{from} \PY{n+nn}{keras}\PY{n+nn}{.}\PY{n+nn}{models} \PY{k}{import} \PY{n}{Sequential}
+        \PY{k+kn}{from} \PY{n+nn}{keras}\PY{n+nn}{.}\PY{n+nn}{layers} \PY{k}{import} \PY{n}{Dense}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}42}]:} \PY{c+c1}{\PYZsh{} Inicializando a ANN}
-         \PY{n}{classifier} \PY{o}{=} \PY{n}{Sequential}\PY{p}{(}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} Adicionando input layer e a hidden layer}
-         \PY{c+c1}{\PYZsh{} units: neuronios na hidden layer; kernel\PYZus{}initializer: inicializar os pesos aleatoriamente; }
-         \PY{c+c1}{\PYZsh{} activation: função de ativação; input\PYZus{}dim: neurônios na input layer.}
-         \PY{n}{classifier}\PY{o}{.}\PY{n}{add}\PY{p}{(} \PY{n}{Dense}\PY{p}{(}\PY{n}{units}\PY{o}{=}\PY{l+m+mi}{50}\PY{p}{,} \PY{n}{kernel\PYZus{}initializer}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uniform}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{activation}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{relu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{input\PYZus{}dim}\PY{o}{=}\PY{l+m+mi}{784}\PY{p}{)} \PY{p}{)}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{c+c1}{\PYZsh{} Inicializando a ANN}
+        \PY{n}{classifier} \PY{o}{=} \PY{n}{Sequential}\PY{p}{(}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Adicionando input layer e a hidden layer}
+        \PY{c+c1}{\PYZsh{} units: neuronios na hidden layer; kernel\PYZus{}initializer: inicializar os pesos aleatoriamente; }
+        \PY{c+c1}{\PYZsh{} activation: função de ativação; input\PYZus{}dim: neurônios na input layer.}
+        \PY{n}{classifier}\PY{o}{.}\PY{n}{add}\PY{p}{(} \PY{n}{Dense}\PY{p}{(}\PY{n}{units}\PY{o}{=}\PY{l+m+mi}{50}\PY{p}{,} \PY{n}{kernel\PYZus{}initializer}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uniform}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{activation}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{relu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{input\PYZus{}dim}\PY{o}{=}\PY{l+m+mi}{784}\PY{p}{)} \PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}43}]:} \PY{c+c1}{\PYZsh{} Adicionando a output Layer}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{c+c1}{\PYZsh{} Adicionando a output Layer}
          \PY{n}{classifier}\PY{o}{.}\PY{n}{add}\PY{p}{(} \PY{n}{Dense}\PY{p}{(}\PY{n}{units}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{kernel\PYZus{}initializer}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{uniform}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{activation}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sigmoid}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}45}]:} \PY{c+c1}{\PYZsh{} Compilando}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{c+c1}{\PYZsh{} Compilando}
          \PY{n}{classifier}\PY{o}{.}\PY{n}{compile}\PY{p}{(}\PY{n}{optimizer}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{adam}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{loss}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{binary\PYZus{}crossentropy}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{metrics}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{accuracy}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}46}]:} \PY{n}{classifier}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{x\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{batch\PYZus{}size}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{epochs}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{classifier}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{x\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{batch\PYZus{}size}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{epochs}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
 Epoch 1/100
-3999/3999 [==============================] - 1s 204us/step - loss: 0.1865 - acc: 0.9467
+3999/3999 [==============================] - 2s 480us/step - loss: 0.2627 - acc: 0.9415
 Epoch 2/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0713 - acc: 0.9754
+3999/3999 [==============================] - 1s 360us/step - loss: 0.0728 - acc: 0.9759
 Epoch 3/100
-3999/3999 [==============================] - 0s 97us/step - loss: 0.0537 - acc: 0.9808
+3999/3999 [==============================] - 1s 326us/step - loss: 0.0551 - acc: 0.9811
 Epoch 4/100
-3999/3999 [==============================] - 0s 96us/step - loss: 0.0428 - acc: 0.9850
+3999/3999 [==============================] - 1s 298us/step - loss: 0.0507 - acc: 0.9834
 Epoch 5/100
-3999/3999 [==============================] - 0s 97us/step - loss: 0.0424 - acc: 0.9859
+3999/3999 [==============================] - 1s 314us/step - loss: 0.0416 - acc: 0.9853
 Epoch 6/100
-3999/3999 [==============================] - 0s 96us/step - loss: 0.0355 - acc: 0.9879
+3999/3999 [==============================] - 1s 211us/step - loss: 0.0386 - acc: 0.9863
 Epoch 7/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0373 - acc: 0.9878
+3999/3999 [==============================] - 1s 349us/step - loss: 0.0345 - acc: 0.9881
 Epoch 8/100
-3999/3999 [==============================] - 0s 100us/step - loss: 0.0343 - acc: 0.9888
+3999/3999 [==============================] - 1s 233us/step - loss: 0.0320 - acc: 0.9892
 Epoch 9/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0340 - acc: 0.9885
+3999/3999 [==============================] - 1s 369us/step - loss: 0.0365 - acc: 0.9880
 Epoch 10/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0253 - acc: 0.9917
+3999/3999 [==============================] - 1s 215us/step - loss: 0.0312 - acc: 0.9896
 Epoch 11/100
-3999/3999 [==============================] - 0s 97us/step - loss: 0.0221 - acc: 0.9929
+3999/3999 [==============================] - 1s 268us/step - loss: 0.0290 - acc: 0.9909
 Epoch 12/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0241 - acc: 0.9922
+3999/3999 [==============================] - 1s 308us/step - loss: 0.0244 - acc: 0.9915
 Epoch 13/100
-3999/3999 [==============================] - 0s 98us/step - loss: 0.0265 - acc: 0.9920
+3999/3999 [==============================] - 2s 422us/step - loss: 0.0231 - acc: 0.9930
 Epoch 14/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0273 - acc: 0.9920
+3999/3999 [==============================] - 1s 374us/step - loss: 0.0241 - acc: 0.9923
 Epoch 15/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0230 - acc: 0.9932
+3999/3999 [==============================] - 1s 329us/step - loss: 0.0225 - acc: 0.9930
 Epoch 16/100
-3999/3999 [==============================] - 0s 100us/step - loss: 0.0216 - acc: 0.9936
+3999/3999 [==============================] - 1s 292us/step - loss: 0.0241 - acc: 0.9926
 Epoch 17/100
-3999/3999 [==============================] - 0s 98us/step - loss: 0.0161 - acc: 0.9954
+3999/3999 [==============================] - 1s 275us/step - loss: 0.0174 - acc: 0.9945
 Epoch 18/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0209 - acc: 0.9939
+3999/3999 [==============================] - 1s 260us/step - loss: 0.0165 - acc: 0.9950
 Epoch 19/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0206 - acc: 0.9944
+3999/3999 [==============================] - 1s 262us/step - loss: 0.0226 - acc: 0.9933
 Epoch 20/100
-3999/3999 [==============================] - 0s 101us/step - loss: 0.0200 - acc: 0.9946
+3999/3999 [==============================] - 1s 284us/step - loss: 0.0263 - acc: 0.9936
 Epoch 21/100
-3999/3999 [==============================] - 1s 131us/step - loss: 0.0230 - acc: 0.9939
+3999/3999 [==============================] - 1s 256us/step - loss: 0.0178 - acc: 0.9950
 Epoch 22/100
-3999/3999 [==============================] - 1s 132us/step - loss: 0.0209 - acc: 0.9949
+3999/3999 [==============================] - 1s 315us/step - loss: 0.0149 - acc: 0.9954
 Epoch 23/100
-3999/3999 [==============================] - 0s 118us/step - loss: 0.0174 - acc: 0.9953
+3999/3999 [==============================] - 1s 211us/step - loss: 0.0146 - acc: 0.9952
 Epoch 24/100
-3999/3999 [==============================] - 0s 108us/step - loss: 0.0162 - acc: 0.9963
+3999/3999 [==============================] - 1s 248us/step - loss: 0.0143 - acc: 0.9959
 Epoch 25/100
-3999/3999 [==============================] - 0s 103us/step - loss: 0.0130 - acc: 0.9964
+3999/3999 [==============================] - 1s 342us/step - loss: 0.0188 - acc: 0.9948
 Epoch 26/100
-3999/3999 [==============================] - 0s 103us/step - loss: 0.0176 - acc: 0.9953
+3999/3999 [==============================] - 1s 344us/step - loss: 0.0239 - acc: 0.9936
 Epoch 27/100
-3999/3999 [==============================] - 0s 104us/step - loss: 0.0152 - acc: 0.9962
+3999/3999 [==============================] - 2s 406us/step - loss: 0.0154 - acc: 0.9958
 Epoch 28/100
-3999/3999 [==============================] - 0s 103us/step - loss: 0.0118 - acc: 0.9971
+3999/3999 [==============================] - 1s 369us/step - loss: 0.0142 - acc: 0.9964
 Epoch 29/100
-3999/3999 [==============================] - 0s 109us/step - loss: 0.0157 - acc: 0.9961
+3999/3999 [==============================] - 1s 248us/step - loss: 0.0169 - acc: 0.9955
 Epoch 30/100
-3999/3999 [==============================] - 0s 107us/step - loss: 0.0125 - acc: 0.9968
+3999/3999 [==============================] - 1s 251us/step - loss: 0.0255 - acc: 0.9942
 Epoch 31/100
-3999/3999 [==============================] - 0s 105us/step - loss: 0.0137 - acc: 0.9965
+3999/3999 [==============================] - ETA: 0s - loss: 0.0230 - acc: 0.995 - 1s 348us/step - loss: 0.0230 - acc: 0.9951
 Epoch 32/100
-3999/3999 [==============================] - 0s 105us/step - loss: 0.0180 - acc: 0.9964
+3999/3999 [==============================] - 1s 255us/step - loss: 0.0215 - acc: 0.9953
 Epoch 33/100
-3999/3999 [==============================] - 0s 105us/step - loss: 0.0219 - acc: 0.9953
+3999/3999 [==============================] - 1s 304us/step - loss: 0.0154 - acc: 0.9968
 Epoch 34/100
-3999/3999 [==============================] - 0s 105us/step - loss: 0.0104 - acc: 0.9975
+3999/3999 [==============================] - 1s 294us/step - loss: 0.0118 - acc: 0.9971
 Epoch 35/100
-3999/3999 [==============================] - 1s 145us/step - loss: 0.0098 - acc: 0.9978
+3999/3999 [==============================] - 1s 227us/step - loss: 0.0223 - acc: 0.9955
 Epoch 36/100
-3999/3999 [==============================] - 1s 127us/step - loss: 0.0159 - acc: 0.9969
+3999/3999 [==============================] - 1s 290us/step - loss: 0.0160 - acc: 0.9963
 Epoch 37/100
-3999/3999 [==============================] - 0s 103us/step - loss: 0.0141 - acc: 0.9971
+3999/3999 [==============================] - 1s 319us/step - loss: 0.0112 - acc: 0.9968
 Epoch 38/100
-3999/3999 [==============================] - 1s 138us/step - loss: 0.0121 - acc: 0.9970
+3999/3999 [==============================] - 1s 235us/step - loss: 0.0147 - acc: 0.9967
 Epoch 39/100
-3999/3999 [==============================] - 1s 133us/step - loss: 0.0116 - acc: 0.9972
+3999/3999 [==============================] - 1s 350us/step - loss: 0.0103 - acc: 0.9976
 Epoch 40/100
-3999/3999 [==============================] - 1s 146us/step - loss: 0.0127 - acc: 0.9973
+3999/3999 [==============================] - 1s 364us/step - loss: 0.0103 - acc: 0.9974
 Epoch 41/100
-3999/3999 [==============================] - 1s 140us/step - loss: 0.0094 - acc: 0.9977
+3999/3999 [==============================] - 2s 404us/step - loss: 0.0136 - acc: 0.9970
 Epoch 42/100
-3999/3999 [==============================] - 0s 107us/step - loss: 0.0134 - acc: 0.9973
+3999/3999 [==============================] - 1s 308us/step - loss: 0.0166 - acc: 0.9965
 Epoch 43/100
-3999/3999 [==============================] - 0s 107us/step - loss: 0.0117 - acc: 0.9977
+3999/3999 [==============================] - 1s 281us/step - loss: 0.0097 - acc: 0.9974
 Epoch 44/100
-3999/3999 [==============================] - 0s 105us/step - loss: 0.0112 - acc: 0.9977
+3999/3999 [==============================] - 1s 336us/step - loss: 0.0082 - acc: 0.9980
 Epoch 45/100
-3999/3999 [==============================] - 0s 106us/step - loss: 0.0150 - acc: 0.9973
+3999/3999 [==============================] - 1s 261us/step - loss: 0.0089 - acc: 0.9980
 Epoch 46/100
-3999/3999 [==============================] - 0s 110us/step - loss: 0.0187 - acc: 0.9965
+3999/3999 [==============================] - 1s 269us/step - loss: 0.0124 - acc: 0.9974
 Epoch 47/100
-3999/3999 [==============================] - 0s 106us/step - loss: 0.0110 - acc: 0.9978
+3999/3999 [==============================] - 2s 387us/step - loss: 0.0219 - acc: 0.9953
 Epoch 48/100
-3999/3999 [==============================] - 0s 111us/step - loss: 0.0110 - acc: 0.9977
+3999/3999 [==============================] - 1s 346us/step - loss: 0.0124 - acc: 0.9974
 Epoch 49/100
-3999/3999 [==============================] - 0s 108us/step - loss: 0.0081 - acc: 0.9985
+3999/3999 [==============================] - 1s 295us/step - loss: 0.0057 - acc: 0.9986
 Epoch 50/100
-3999/3999 [==============================] - 0s 106us/step - loss: 0.0119 - acc: 0.9980
+3999/3999 [==============================] - 2s 393us/step - loss: 0.0070 - acc: 0.9983
 Epoch 51/100
-3999/3999 [==============================] - 0s 107us/step - loss: 0.0152 - acc: 0.9974
+3999/3999 [==============================] - 1s 287us/step - loss: 0.0115 - acc: 0.9978
 Epoch 52/100
-3999/3999 [==============================] - 0s 116us/step - loss: 0.0108 - acc: 0.9979
+3999/3999 [==============================] - 2s 482us/step - loss: 0.0087 - acc: 0.9982
 Epoch 53/100
-3999/3999 [==============================] - 0s 112us/step - loss: 0.0118 - acc: 0.9975
+3999/3999 [==============================] - 1s 324us/step - loss: 0.0114 - acc: 0.9975
 Epoch 54/100
-3999/3999 [==============================] - 0s 97us/step - loss: 0.0108 - acc: 0.9977
+3999/3999 [==============================] - 1s 330us/step - loss: 0.0118 - acc: 0.9974
 Epoch 55/100
-3999/3999 [==============================] - 1s 136us/step - loss: 0.0086 - acc: 0.9984
+3999/3999 [==============================] - 2s 386us/step - loss: 0.0148 - acc: 0.9972
 Epoch 56/100
-3999/3999 [==============================] - 0s 101us/step - loss: 0.0129 - acc: 0.9978
+3999/3999 [==============================] - 1s 332us/step - loss: 0.0133 - acc: 0.9977
 Epoch 57/100
-3999/3999 [==============================] - 0s 110us/step - loss: 0.0106 - acc: 0.9980
+3999/3999 [==============================] - 1s 311us/step - loss: 0.0101 - acc: 0.9979
 Epoch 58/100
-3999/3999 [==============================] - 0s 103us/step - loss: 0.0155 - acc: 0.9974
+3999/3999 [==============================] - 1s 297us/step - loss: 0.0184 - acc: 0.9970
 Epoch 59/100
-3999/3999 [==============================] - 0s 105us/step - loss: 0.0149 - acc: 0.9976
+3999/3999 [==============================] - 1s 336us/step - loss: 0.0091 - acc: 0.9979
 Epoch 60/100
-3999/3999 [==============================] - 1s 132us/step - loss: 0.0095 - acc: 0.9984
+3999/3999 [==============================] - 2s 379us/step - loss: 0.0093 - acc: 0.9981
 Epoch 61/100
-3999/3999 [==============================] - 1s 135us/step - loss: 0.0062 - acc: 0.9989
+3999/3999 [==============================] - 1s 278us/step - loss: 0.0143 - acc: 0.9975
 Epoch 62/100
-3999/3999 [==============================] - 0s 108us/step - loss: 0.0073 - acc: 0.9987
+3999/3999 [==============================] - 1s 297us/step - loss: 0.0194 - acc: 0.9966
 Epoch 63/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0077 - acc: 0.9986
+3999/3999 [==============================] - 1s 335us/step - loss: 0.0100 - acc: 0.9978
 Epoch 64/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0125 - acc: 0.9979
+3999/3999 [==============================] - 2s 396us/step - loss: 0.0078 - acc: 0.9984
 Epoch 65/100
-3999/3999 [==============================] - 0s 101us/step - loss: 0.0078 - acc: 0.9984
+3999/3999 [==============================] - 2s 423us/step - loss: 0.0109 - acc: 0.9982
 Epoch 66/100
-3999/3999 [==============================] - 0s 100us/step - loss: 0.0173 - acc: 0.9971
+3999/3999 [==============================] - 1s 316us/step - loss: 0.0130 - acc: 0.9978
 Epoch 67/100
-3999/3999 [==============================] - 0s 107us/step - loss: 0.0169 - acc: 0.9973
+3999/3999 [==============================] - 1s 322us/step - loss: 0.0105 - acc: 0.9981
 Epoch 68/100
-3999/3999 [==============================] - 0s 98us/step - loss: 0.0113 - acc: 0.9982
+3999/3999 [==============================] - 1s 279us/step - loss: 0.0121 - acc: 0.9977
 Epoch 69/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0051 - acc: 0.9988
+3999/3999 [==============================] - 1s 318us/step - loss: 0.0048 - acc: 0.9990
 Epoch 70/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0085 - acc: 0.9982
+3999/3999 [==============================] - 1s 288us/step - loss: 0.0081 - acc: 0.9983
 Epoch 71/100
-3999/3999 [==============================] - 0s 98us/step - loss: 0.0065 - acc: 0.9989
+3999/3999 [==============================] - 1s 258us/step - loss: 0.0079 - acc: 0.9982
 Epoch 72/100
-3999/3999 [==============================] - 0s 103us/step - loss: 0.0101 - acc: 0.9982
+3999/3999 [==============================] - 1s 331us/step - loss: 0.0095 - acc: 0.9981
 Epoch 73/100
-3999/3999 [==============================] - 0s 111us/step - loss: 0.0192 - acc: 0.9969
+3999/3999 [==============================] - 1s 262us/step - loss: 0.0129 - acc: 0.9975
 Epoch 74/100
-3999/3999 [==============================] - 0s 113us/step - loss: 0.0142 - acc: 0.9977
+3999/3999 [==============================] - 1s 299us/step - loss: 0.0089 - acc: 0.9981
 Epoch 75/100
-3999/3999 [==============================] - 0s 108us/step - loss: 0.0089 - acc: 0.9986
+3999/3999 [==============================] - 1s 274us/step - loss: 0.0081 - acc: 0.9981
 Epoch 76/100
-3999/3999 [==============================] - 0s 106us/step - loss: 0.0071 - acc: 0.9990
+3999/3999 [==============================] - 1s 323us/step - loss: 0.0066 - acc: 0.9987
 Epoch 77/100
-3999/3999 [==============================] - 0s 108us/step - loss: 0.0108 - acc: 0.9982
+3999/3999 [==============================] - 1s 363us/step - loss: 0.0081 - acc: 0.9986
 Epoch 78/100
-3999/3999 [==============================] - 0s 112us/step - loss: 0.0107 - acc: 0.9979
+3999/3999 [==============================] - 1s 349us/step - loss: 0.0150 - acc: 0.9977
 Epoch 79/100
-3999/3999 [==============================] - 0s 104us/step - loss: 0.0073 - acc: 0.9986
+3999/3999 [==============================] - 1s 275us/step - loss: 0.0127 - acc: 0.9979
 Epoch 80/100
-3999/3999 [==============================] - 0s 105us/step - loss: 0.0072 - acc: 0.9988
+3999/3999 [==============================] - 1s 261us/step - loss: 0.0049 - acc: 0.9990
 Epoch 81/100
-3999/3999 [==============================] - 0s 105us/step - loss: 0.0073 - acc: 0.9986
+3999/3999 [==============================] - 1s 263us/step - loss: 0.0112 - acc: 0.9980
 Epoch 82/100
-3999/3999 [==============================] - 0s 111us/step - loss: 0.0162 - acc: 0.9977
+3999/3999 [==============================] - 1s 237us/step - loss: 0.0053 - acc: 0.9988
 Epoch 83/100
-3999/3999 [==============================] - 0s 110us/step - loss: 0.0082 - acc: 0.9983
+3999/3999 [==============================] - 1s 278us/step - loss: 0.0028 - acc: 0.9993
 Epoch 84/100
-3999/3999 [==============================] - 0s 109us/step - loss: 0.0054 - acc: 0.9990
+3999/3999 [==============================] - 1s 227us/step - loss: 0.0032 - acc: 0.9992
 Epoch 85/100
-3999/3999 [==============================] - 0s 100us/step - loss: 0.0074 - acc: 0.9986
+3999/3999 [==============================] - 1s 261us/step - loss: 0.0117 - acc: 0.9979
 Epoch 86/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0093 - acc: 0.9986
+3999/3999 [==============================] - 1s 234us/step - loss: 0.0179 - acc: 0.9974
 Epoch 87/100
-3999/3999 [==============================] - 0s 111us/step - loss: 0.0068 - acc: 0.9987
+3999/3999 [==============================] - 1s 311us/step - loss: 0.0162 - acc: 0.9975
 Epoch 88/100
-3999/3999 [==============================] - 0s 111us/step - loss: 0.0143 - acc: 0.9980
+3999/3999 [==============================] - 1s 225us/step - loss: 0.0071 - acc: 0.9985
 Epoch 89/100
-3999/3999 [==============================] - 0s 105us/step - loss: 0.0128 - acc: 0.9981
+3999/3999 [==============================] - 1s 233us/step - loss: 0.0110 - acc: 0.9981
 Epoch 90/100
-3999/3999 [==============================] - 0s 101us/step - loss: 0.0087 - acc: 0.9985
+3999/3999 [==============================] - 1s 307us/step - loss: 0.0073 - acc: 0.9986
 Epoch 91/100
-3999/3999 [==============================] - 0s 108us/step - loss: 0.0053 - acc: 0.9991
+3999/3999 [==============================] - 1s 301us/step - loss: 0.0048 - acc: 0.9991
 Epoch 92/100
-3999/3999 [==============================] - 0s 109us/step - loss: 0.0053 - acc: 0.9991
+3999/3999 [==============================] - 1s 358us/step - loss: 0.0059 - acc: 0.9988
 Epoch 93/100
-3999/3999 [==============================] - 0s 98us/step - loss: 0.0056 - acc: 0.9991
+3999/3999 [==============================] - 1s 314us/step - loss: 0.0040 - acc: 0.9991
 Epoch 94/100
-3999/3999 [==============================] - 0s 98us/step - loss: 0.0101 - acc: 0.9983
+3999/3999 [==============================] - 1s 202us/step - loss: 0.0112 - acc: 0.9984
 Epoch 95/100
-3999/3999 [==============================] - 0s 115us/step - loss: 0.0056 - acc: 0.9989
+3999/3999 [==============================] - 1s 240us/step - loss: 0.0081 - acc: 0.9983
 Epoch 96/100
-3999/3999 [==============================] - 0s 106us/step - loss: 0.0062 - acc: 0.9989
+3999/3999 [==============================] - 1s 297us/step - loss: 0.0075 - acc: 0.9987
 Epoch 97/100
-3999/3999 [==============================] - 0s 110us/step - loss: 0.0077 - acc: 0.9987
+3999/3999 [==============================] - 1s 280us/step - loss: 0.0071 - acc: 0.9987
 Epoch 98/100
-3999/3999 [==============================] - 0s 99us/step - loss: 0.0125 - acc: 0.9979
+3999/3999 [==============================] - 1s 290us/step - loss: 0.0142 - acc: 0.9976
 Epoch 99/100
-3999/3999 [==============================] - 0s 108us/step - loss: 0.0142 - acc: 0.9977
+3999/3999 [==============================] - 1s 315us/step - loss: 0.0094 - acc: 0.9984
 Epoch 100/100
-3999/3999 [==============================] - 0s 116us/step - loss: 0.0092 - acc: 0.9984
+3999/3999 [==============================] - 1s 292us/step - loss: 0.0079 - acc: 0.9985
 
     \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}46}]:} <keras.callbacks.History at 0x7fdd36e449e8>
+{\color{outcolor}Out[{\color{outcolor}12}]:} <keras.callbacks.History at 0x7f3f5c9ae0b8>
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}69}]:} \PY{n}{y\PYZus{}pred} \PY{o}{=} \PY{n}{classifier}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{x\PYZus{}test}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{y\PYZus{}pred} \PY{o}{=} \PY{n}{classifier}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{x\PYZus{}test}\PY{p}{)}
          \PY{c+c1}{\PYZsh{}print (y\PYZus{}pred)}
          
          \PY{n}{r} \PY{o}{=} \PY{p}{[}\PY{p}{]}
@@ -638,7 +638,7 @@ r: 8
 ans:  8
 r: 1
 ans:  1
-r: 5
+r: 6
 ans:  5
 r: 4
 ans:  4
@@ -654,7 +654,7 @@ r: 4
 ans:  4
 r: 2
 ans:  2
-r: 8
+r: 3
 ans:  9
 r: 9
 ans:  9
@@ -736,7 +736,7 @@ r: 7
 ans:  7
 r: 7
 ans:  7
-r: 4
+r: 9
 ans:  2
 r: 1
 ans:  1
@@ -762,17 +762,17 @@ r: 2
 ans:  2
 r: 7
 ans:  2
-r: 4
+r: 9
 ans:  9
 r: 8
 ans:  8
 r: 7
 ans:  7
-r: 8
+r: 6
 ans:  5
 r: 9
 ans:  9
-r: 9
+r: 7
 ans:  7
 r: 0
 ans:  0
@@ -788,7 +788,7 @@ r: 3
 ans:  3
 r: 0
 ans:  0
-r: 2
+r: 3
 ans:  3
 r: 9
 ans:  9
@@ -796,11 +796,11 @@ r: 3
 ans:  3
 r: 2
 ans:  2
-r: 5
+r: 8
 ans:  9
 r: 7
 ans:  7
-r: 7
+r: 2
 ans:  7
 r: 1
 ans:  1
@@ -812,15 +812,15 @@ r: 7
 ans:  7
 r: 5
 ans:  5
-r: 4
+r: 9
 ans:  4
-r: 7
+r: 2
 ans:  2
 r: 4
 ans:  4
 r: 9
 ans:  9
-r: 2
+r: 5
 ans:  5
 r: 5
 ans:  5
@@ -828,7 +828,7 @@ r: 6
 ans:  6
 r: 9
 ans:  9
-r: 5
+r: 8
 ans:  5
 r: 2
 ans:  2
@@ -856,7 +856,7 @@ r: 4
 ans:  4
 r: 0
 ans:  0
-r: 9
+r: 7
 ans:  9
 r: 1
 ans:  1
@@ -886,7 +886,7 @@ r: 1
 ans:  1
 r: 5
 ans:  5
-r: 4
+r: 9
 ans:  4
 r: 0
 ans:  0
@@ -986,11 +986,11 @@ r: 0
 ans:  0
 r: 7
 ans:  3
-r: 4
+r: 9
 ans:  4
 r: 9
 ans:  9
-r: 9
+r: 4
 ans:  7
 r: 6
 ans:  6
@@ -1036,7 +1036,7 @@ r: 0
 ans:  0
 r: 4
 ans:  4
-r: 9
+r: 7
 ans:  9
 r: 5
 ans:  5
@@ -1072,7 +1072,7 @@ r: 0
 ans:  0
 r: 4
 ans:  4
-r: 7
+r: 2
 ans:  2
 r: 9
 ans:  9
@@ -1084,7 +1084,7 @@ r: 2
 ans:  2
 r: 8
 ans:  8
-r: 5
+r: 6
 ans:  6
 r: 5
 ans:  5
@@ -1144,7 +1144,7 @@ r: 6
 ans:  6
 r: 2
 ans:  2
-r: 0
+r: 8
 ans:  0
 r: 7
 ans:  7
@@ -1174,7 +1174,7 @@ r: 3
 ans:  3
 r: 4
 ans:  4
-r: 3
+r: 8
 ans:  5
 r: 3
 ans:  3
@@ -1206,7 +1206,7 @@ r: 8
 ans:  8
 r: 2
 ans:  2
-r: 4
+r: 9
 ans:  6
 r: 1
 ans:  1
@@ -1218,13 +1218,13 @@ r: 0
 ans:  0
 r: 1
 ans:  1
-r: 7
+r: 5
 ans:  7
 r: 3
 ans:  3
 r: 3
 ans:  3
-r: 9
+r: 8
 ans:  8
 r: 9
 ans:  9
@@ -1240,7 +1240,7 @@ r: 7
 ans:  7
 r: 9
 ans:  9
-r: 6
+r: 5
 ans:  6
 r: 2
 ans:  2
@@ -1268,13 +1268,13 @@ r: 3
 ans:  3
 r: 3
 ans:  3
-r: 7
+r: 9
 ans:  9
 r: 2
 ans:  2
-r: 8
+r: 3
 ans:  3
-r: 8
+r: 5
 ans:  8
 r: 7
 ans:  7
@@ -1284,7 +1284,7 @@ r: 5
 ans:  5
 r: 5
 ans:  5
-r: 3
+r: 9
 ans:  3
 r: 2
 ans:  2
@@ -1304,7 +1304,7 @@ r: 2
 ans:  2
 r: 9
 ans:  9
-r: 1
+r: 5
 ans:  5
 r: 9
 ans:  9
@@ -1312,9 +1312,9 @@ r: 4
 ans:  4
 r: 5
 ans:  5
-r: 9
+r: 8
 ans:  8
-r: 0
+r: 5
 ans:  5
 r: 2
 ans:  2
@@ -1344,13 +1344,13 @@ r: 2
 ans:  2
 r: 0
 ans:  0
-r: 5
+r: 8
 ans:  5
 r: 3
 ans:  3
 r: 5
 ans:  5
-r: 2
+r: 5
 ans:  5
 r: 6
 ans:  6
@@ -1398,7 +1398,7 @@ r: 7
 ans:  7
 r: 8
 ans:  8
-r: 8
+r: 3
 ans:  5
 r: 6
 ans:  6
@@ -1416,7 +1416,7 @@ r: 0
 ans:  0
 r: 1
 ans:  1
-r: 9
+r: 4
 ans:  4
 r: 3
 ans:  3
@@ -1428,7 +1428,7 @@ r: 5
 ans:  5
 r: 1
 ans:  1
-r: 2
+r: 4
 ans:  4
 r: 3
 ans:  3
@@ -1472,7 +1472,7 @@ r: 5
 ans:  5
 r: 9
 ans:  9
-r: 8
+r: 3
 ans:  5
 r: 3
 ans:  3
@@ -1512,7 +1512,7 @@ r: 8
 ans:  8
 r: 5
 ans:  5
-r: 7
+r: 6
 ans:  7
 r: 2
 ans:  2
@@ -1520,7 +1520,7 @@ r: 7
 ans:  7
 r: 4
 ans:  4
-r: 3
+r: 8
 ans:  8
 r: 2
 ans:  2
@@ -1542,7 +1542,7 @@ r: 7
 ans:  7
 r: 8
 ans:  8
-r: 3
+r: 5
 ans:  8
 r: 3
 ans:  3
@@ -1560,7 +1560,7 @@ r: 7
 ans:  7
 r: 9
 ans:  9
-r: 7
+r: 9
 ans:  7
 r: 3
 ans:  3
@@ -1606,7 +1606,7 @@ r: 1
 ans:  1
 r: 9
 ans:  9
-r: 9
+r: 8
 ans:  8
 r: 4
 ans:  4
@@ -1616,11 +1616,11 @@ r: 1
 ans:  1
 r: 9
 ans:  9
-r: 8
+r: 3
 ans:  3
 r: 7
 ans:  7
-r: 6
+r: 8
 ans:  8
 r: 8
 ans:  3
@@ -1630,7 +1630,7 @@ r: 8
 ans:  8
 r: 9
 ans:  9
-r: 1
+r: 8
 ans:  1
 r: 9
 ans:  9
@@ -1672,7 +1672,7 @@ r: 0
 ans:  0
 r: 7
 ans:  7
-r: 9
+r: 5
 ans:  5
 r: 4
 ans:  2
@@ -1688,7 +1688,7 @@ r: 6
 ans:  6
 r: 2
 ans:  2
-r: 8
+r: 7
 ans:  7
 r: 9
 ans:  9
@@ -1740,7 +1740,7 @@ r: 0
 ans:  0
 r: 7
 ans:  7
-r: 7
+r: 9
 ans:  9
 r: 7
 ans:  7
@@ -1774,11 +1774,11 @@ r: 7
 ans:  7
 r: 4
 ans:  4
-r: 1
+r: 9
 ans:  1
 r: 6
 ans:  6
-r: 8
+r: 3
 ans:  9
 r: 6
 ans:  6
@@ -1790,7 +1790,7 @@ r: 1
 ans:  1
 r: 2
 ans:  2
-r: 1
+r: 8
 ans:  1
 r: 1
 ans:  1
@@ -1864,7 +1864,7 @@ r: 2
 ans:  2
 r: 4
 ans:  4
-r: 7
+r: 9
 ans:  2
 r: 4
 ans:  4
@@ -1886,7 +1886,7 @@ r: 0
 ans:  0
 r: 8
 ans:  8
-r: 2
+r: 8
 ans:  2
 r: 4
 ans:  4
@@ -1906,7 +1906,7 @@ r: 0
 ans:  0
 r: 9
 ans:  9
-r: 3
+r: 4
 ans:  8
 r: 1
 ans:  1
@@ -1926,7 +1926,7 @@ r: 9
 ans:  9
 r: 5
 ans:  5
-r: 8
+r: 4
 ans:  4
 r: 2
 ans:  2
@@ -1954,7 +1954,7 @@ r: 9
 ans:  9
 r: 6
 ans:  6
-r: 5
+r: 8
 ans:  5
 r: 7
 ans:  7
@@ -1964,11 +1964,11 @@ r: 5
 ans:  5
 r: 2
 ans:  2
-r: 0
+r: 2
 ans:  2
 r: 2
 ans:  2
-r: 7
+r: 9
 ans:  7
 r: 4
 ans:  4
@@ -1988,7 +1988,7 @@ r: 2
 ans:  2
 r: 0
 ans:  0
-r: 8
+r: 3
 ans:  3
 r: 8
 ans:  8
@@ -2002,7 +2002,7 @@ r: 2
 ans:  2
 r: 0
 ans:  0
-r: 3
+r: 8
 ans:  3
 r: 0
 ans:  0
@@ -2026,13 +2026,13 @@ r: 4
 ans:  4
 r: 7
 ans:  7
-r: 6
+r: 0
 ans:  0
 r: 4
 ans:  4
 r: 0
 ans:  0
-r: 1
+r: 8
 ans:  1
 r: 2
 ans:  2
@@ -2056,7 +2056,7 @@ r: 6
 ans:  6
 r: 7
 ans:  7
-r: 3
+r: 2
 ans:  2
 r: 1
 ans:  1
@@ -2086,7 +2086,7 @@ r: 2
 ans:  2
 r: 8
 ans:  8
-r: 0
+r: 5
 ans:  6
 r: 6
 ans:  6
@@ -2140,7 +2140,7 @@ r: 4
 ans:  4
 r: 1
 ans:  1
-r: 6
+r: 8
 ans:  7
 r: 2
 ans:  2
@@ -2172,7 +2172,7 @@ r: 3
 ans:  3
 r: 2
 ans:  2
-r: 9
+r: 4
 ans:  9
 r: 5
 ans:  5
@@ -2182,7 +2182,7 @@ r: 5
 ans:  5
 r: 1
 ans:  1
-r: 3
+r: 8
 ans:  2
 r: 0
 ans:  0
@@ -2232,7 +2232,7 @@ r: 2
 ans:  2
 r: 1
 ans:  1
-r: 5
+r: 3
 ans:  3
 r: 9
 ans:  9
@@ -2244,9 +2244,9 @@ r: 2
 ans:  2
 r: 3
 ans:  3
-r: 4
+r: 9
 ans:  4
-r: 3
+r: 7
 ans:  7
 r: 7
 ans:  7
@@ -2316,7 +2316,7 @@ r: 9
 ans:  9
 r: 1
 ans:  1
-r: 1
+r: 9
 ans:  9
 r: 6
 ans:  6
@@ -2350,17 +2350,17 @@ r: 9
 ans:  9
 r: 2
 ans:  2
-r: 4
+r: 2
 ans:  4
 r: 6
 ans:  6
 r: 1
 ans:  1
-r: 4
+r: 9
 ans:  9
-r: 7
+r: 9
 ans:  7
-r: 5
+r: 3
 ans:  5
 r: 1
 ans:  1
@@ -2384,7 +2384,7 @@ r: 9
 ans:  9
 r: 1
 ans:  1
-r: 3
+r: 8
 ans:  3
 r: 0
 ans:  0
@@ -2402,7 +2402,7 @@ r: 0
 ans:  0
 r: 5
 ans:  5
-r: 4
+r: 0
 ans:  4
 r: 3
 ans:  3
@@ -2414,7 +2414,7 @@ r: 6
 ans:  6
 r: 5
 ans:  5
-r: 2
+r: 7
 ans:  2
 r: 6
 ans:  6
@@ -2458,7 +2458,7 @@ r: 0
 ans:  0
 r: 9
 ans:  9
-r: 4
+r: 2
 ans:  2
 r: 5
 ans:  5
@@ -2538,11 +2538,11 @@ r: 8
 ans:  8
 r: 4
 ans:  7
-r: 8
+r: 3
 ans:  3
 r: 8
 ans:  8
-r: 8
+r: 0
 ans:  0
 r: 0
 ans:  0
@@ -2550,7 +2550,7 @@ r: 2
 ans:  2
 r: 7
 ans:  7
-r: 6
+r: 8
 ans:  8
 r: 5
 ans:  5
@@ -2574,7 +2574,7 @@ r: 1
 ans:  1
 r: 2
 ans:  2
-r: 3
+r: 9
 ans:  3
 r: 3
 ans:  3
@@ -2624,7 +2624,7 @@ r: 4
 ans:  4
 r: 7
 ans:  7
-r: 6
+r: 8
 ans:  6
 r: 8
 ans:  8
@@ -2634,14 +2634,14 @@ ans:  2
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}76}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{corretos: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{cont\PYZus{}certos}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{corretos: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{cont\PYZus{}certos}\PY{p}{)}
          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{errados: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{cont\PYZus{}errados}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-corretos:  923
-errados:  77
+corretos:  925
+errados:  75
 
     \end{Verbatim}
 
